@@ -8,7 +8,7 @@ BASE_URL = "https://reqres.in"
 
 def test_single_user_succsessfully():
     url = f"{BASE_URL}/api/users/2"
-    schema = load_schema("../utils/schema/get_single_user.json")
+    schema = load_schema("get_single_user.json")
 
     results = requests.get(url)
 
@@ -22,7 +22,7 @@ def test_single_user_succsessfully():
 
 def test_create_user_succseddfully():
     url = f"{BASE_URL}/api/users/"
-    schema = load_schema("../utils/schema/create_user.json")
+    schema = load_schema("create_user.json")
     body = {
         "name": "aleksey",
         "job": "student"
@@ -39,7 +39,7 @@ def test_create_user_succseddfully():
 def test_update_user_succseddfully():
     id_update_user = 2
     url = f"{BASE_URL}/api/users/{id}"
-    schema = load_schema("../utils/schema/update_user.json")
+    schema = load_schema("update_user.json")
     body = {
         "name": "aleksey_petrov",
         "job": "student"
@@ -64,7 +64,7 @@ def test_delete_user_succseddfully():
 
 def test_register_user_succseddfully():
     url = f"{BASE_URL}/api/register"
-    schema = load_schema("../utils/schema/register_user.json")
+    schema = load_schema("register_user.json")
     body = {
         "email": "eve.holt@reqres.in",
         "password": "pistol"
@@ -78,7 +78,7 @@ def test_register_user_succseddfully():
 
 def test_login_user_succseddfully():
     url = f"{BASE_URL}/api/register"
-    schema = load_schema("../utils/schema/login_user.json")
+    schema = load_schema("login_user.json")
     body = {
         "email": "eve.holt@reqres.in",
         "password": "pistol"
@@ -92,7 +92,7 @@ def test_login_user_succseddfully():
 
 def test_single_user_unsuccseddfully():
     url = f"{BASE_URL}/api/users/23"
-    schema = load_schema("../utils/schema/get_single_user.json")
+    schema = load_schema("get_single_user.json")
 
     results = requests.get(url)
 
